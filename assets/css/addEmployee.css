@@ -1,0 +1,20 @@
+.form-control
+{
+    width: 500px;
+}
+
+#addStudentButton
+{
+    width: 200px;
+}
+
+#createEmployeeForm
+{
+    height:75vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: center;
+    justify-content: center;
+}

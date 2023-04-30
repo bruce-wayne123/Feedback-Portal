@@ -1,0 +1,13 @@
+const express = require("express");
+const router = express.Router();
+const passport = require("passport");
+const session = require("express-session");
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const employeeController = require("../controllers/employee_controller");
+router.get("/getEmployees", employeeController.getEmployees);
+router.get("/addEmployee", employeeController.addEmployee);
+router.post("/create", employeeController.create);
+// router.post("/updateInterviewData", studentsController.updateInterviewData);
+// router.get("/downloadData", studentsController.downloadData);
+module.exports = router;

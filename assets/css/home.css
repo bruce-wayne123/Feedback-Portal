@@ -1,0 +1,31 @@
+#headerContainer {
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  flex-direction: column;
+  background-image: url("https://global-uploads.webflow.com/632264efe4bf88d3b73ab56c/634324d52c7f3529aa2c19be_two-businessmen-having-conversation-at-table-Your-Guide-to-Running-An-Incredible-One-On-One-Meeting-1.jpeg");
+  background-position: center;
+  align-items: center;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+#buttonContainer {
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  row-gap: 50px;
+  margin-left: 1300px;
+  justify-content: end;
+}
+
+.btn {
+  display: flex;
+  width: 300px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}

@@ -1,0 +1,17 @@
+#signUpForm
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+}
+
+#loginButton
+{
+    width: 100px;
+}
+
+.form-control
+{
+    width: 300px;
+}

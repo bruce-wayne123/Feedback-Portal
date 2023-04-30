@@ -1,0 +1,17 @@
+#loginForm {
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+#loginButton {
+  width: 500px;
+}
+
+.form-control {
+  width: 500px;
+}

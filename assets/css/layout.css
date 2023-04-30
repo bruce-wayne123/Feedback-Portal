@@ -1,0 +1,11 @@
+#pageTitle
+{
+  margin-top: 50px;
+    text-align: center;
+    color: gray;
+}
+
+.btn:hover
+{
+  background-color: tomato;
+}
