@@ -22,7 +22,6 @@ module.exports.create = async function (req, resp) {
                 employeeId: randomEmployeeId,
                 name: req.body.name,
                 email: req.body.email,
-                employeeId: req.body.empId,
                 department: req.body.department,
                 location: req.body.location
             });
@@ -36,6 +35,13 @@ module.exports.create = async function (req, resp) {
     }
 };
 
-module.exports.addEmployee= async function (req, resp) {
+module.exports.addEmployee = async function (req, resp) {
     return resp.render("addemployee", { title: "Add Employee" });
+}
+
+module.exports.deleteEmployee = async function (req, resp) {
+
+    console.log(req.params.id);
+    let employee = await Employee.findByIdAndDelete(req.params.id);
+    return resp.render('dashboard', { title: "Dashboard" });
 }

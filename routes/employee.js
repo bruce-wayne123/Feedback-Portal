@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const employeeController = require("../controllers/employee_controller");
 router.get("/getEmployees", employeeController.getEmployees);
+router.get("/deleteEmployee/:id", employeeController.deleteEmployee);
 router.get("/addEmployee", employeeController.addEmployee);
 router.post("/create", employeeController.create);
 // router.post("/updateInterviewData", studentsController.updateInterviewData);

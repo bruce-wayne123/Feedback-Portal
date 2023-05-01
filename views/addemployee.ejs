@@ -1,8 +1,26 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/addEmployee.css">
-<form id="createEmployeeForm" action="/students/create" method="post">
-    <input type="text" name="name" placeholder="Student name" class="form-control" required />
-    <input type="email" name="email" placeholder="Student email" class="form-control" required />
-    <input type="text" name="batch" placeholder="Batch" class="form-control" required />
-    <input type="text" name="college" placeholder="College" class="form-control" required />
+<form id="createEmployeeForm" action="/employee/create" method="post">
+    <input type="text" name="name" placeholder="Name" class="form-control" required />
+    <input type="email" name="email" placeholder="Email" class="form-control" required />
+   <div id="dropdownContainer">
+        <label for="positionList" required>Department : </label>
+        <select name="department" id="deptList" required>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Sales">Sales</option>
+            <option value="Finance">Finance</option>
+            <option value="Back Office">Back Office</option>
+        </select>
+        <label for="positionList" required>Office Location : </label>
+        <select name="location" id="officeList" required>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Banglore">Banglore</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Ahemedabad">Ahemedabad</option>
+            <option value="Kochi">Kochi</option>
+        </select>
+    </div>
     <input id="addStudentButton" class="btn btn-primary" type="submit" value="Submit" />
 </form>

@@ -1,20 +1,23 @@
-.form-control
-{
-    width: 500px;
+.form-control {
+  width: 500px;
 }
 
-#addStudentButton
-{
-    width: 200px;
+#addStudentButton {
+  width: 200px;
 }
 
-#createEmployeeForm
-{
-    height:75vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    align-items: center;
-    justify-content: center;
+#createEmployeeForm {
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+#dropdownContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 25px;
 }
