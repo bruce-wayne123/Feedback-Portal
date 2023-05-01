@@ -35,13 +35,35 @@ module.exports.create = async function (req, resp) {
     }
 };
 
+module.exports.update = async function (req, resp) {
+    let requestBody = req.body;
+    try {
+        let employee = await Employee.findById(requestBody.employeeId);
+        if (employee) {
+            employee.name = req.body.name,
+                employee.department = req.body.department,
+                employee.location = req.body.location
+            await employee.save();
+        }
+        else {
+            console.log("No employee found");
+        }
+        return resp.render('dashboard', { title: "Dashboard" });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 module.exports.addEmployee = async function (req, resp) {
     return resp.render("addemployee", { title: "Add Employee" });
 }
 
-module.exports.deleteEmployee = async function (req, resp) {
+module.exports.updateEmployee = async function (req, resp) {
+    let employee = await Employee.findById(req.params.id);
+    return resp.render("employeeDetails", { title: "Employee Details", employee: employee });
+}
 
-    console.log(req.params.id);
-    let employee = await Employee.findByIdAndDelete(req.params.id);
+module.exports.deleteEmployee = async function (req, resp) {
+    await Employee.findByIdAndDelete(req.params.id);
     return resp.render('dashboard', { title: "Dashboard" });
 }

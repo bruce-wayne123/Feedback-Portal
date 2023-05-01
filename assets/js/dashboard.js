@@ -19,7 +19,7 @@ function addToList(employee) {
     li.innerHTML = `<li>
     <div style="display:flex;justify-content: center;
                 border-top: 1px solid black; border-bottom: 1px solid black; padding: 10px;width: 500px;">
-                <a id=${employee._id}  style="font-size: 14px;width:22.5%" href="/results/${employee._id}">${employee.employeeId}</a>
+                <a id=${employee._id}  style="font-size: 14px;width:22.5%" href="/employee/updateEmployee/${employee._id}">${employee.employeeId}</a>
                 <a id=${employee._id}  style="font-size: 14px;width: 22.5%" text-decoration:none;>${employee.name}</a>
                 <a id=${employee._id}  style="font-size: 14px;width: 22.5%" text-decoration:none;>${employee.department}</a>
                 <a id=${employee._id}  style="font-size: 14px;width: 22.5%" text-decoration:none;>${employee.location}</a>
