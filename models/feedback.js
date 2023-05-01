@@ -1,36 +1,34 @@
 const mongoose = require('mongoose');
-const employeeSchema = new mongoose.Schema(
+const feedbackSchema = new mongoose.Schema(
     {
         employeeId: {
             type: String,
             required: true,
         },
-        name: {
+        teamwork: {
             type: String,
             required: true,
         },
-        email: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        password: {
-            type: String,
-        },
-        department: {
+        communication: {
             type: String,
             required: true,
         },
-        location: {
+        accuracyOfWork: {
             type: String,
             required: true,
         },
-        isAdmin: {
-            type: Boolean,
-        }
+        attendance: {
+            type: String,
+            required: true,
+        },
+        remarks: {
+            type: String,
+            required: true,
+        },
+
     },
     { timestamps: true }
 );
 
-const Employee = mongoose.model("Employee", employeeSchema);
-module.exports = Employee;
+const Feedback = mongoose.model("Feedback", feedbackSchema);
+module.exports = Feedback;

@@ -21,3 +21,11 @@
   flex-direction: row;
   column-gap: 25px;
 }
+
+#remarksContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 25px;
+  align-items: center;
+  justify-content: center;
+}

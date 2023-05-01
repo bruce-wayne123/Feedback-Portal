@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/addEmployee.css">
+<form id="createEmployeeForm" action="/employee/create" method="post">
+    <div id="interviewDetailsContainer2">
+        <label for="employeeListView">Select Employee for feedback : </label>
+        <select name="employee" id="employeeListView" required>
+            <% for(employee of employees){ %>
+                <option value="<%= employee.id %>">
+                <%= employee.name %>
+                </option>       
+            <% } %>
+        </select>
+    </div>
+    <div id="dropdownContainer">
+        <label for="positionList" required>Team Work : </label>
+        <select name="department" id="deptList" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label for="positionList" required>Communication : </label>
+        <select name="location" id="officeList" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div id="dropdownContainer">
+        <label for="positionList" required>Accuracy Of Work : </label>
+        <select name="department" id="deptList" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label for="positionList" required>Attendance : </label>
+        <select name="location" id="officeList" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div id="remarksContainer">
+        <label for="remarksTextView">Remarks : </label>
+        <textarea id="remarksTextView" placeholder="Enter remarks" required></textarea>
+    </div>
+    <input id="addStudentButton" class="btn btn-primary" type="submit" value="Submit" />
+</form>

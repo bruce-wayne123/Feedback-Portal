@@ -8,5 +8,28 @@
 
 #addStudent {
   margin-top: 30px;
-  justify-content: end;
+  margin-left: 200px;
+}
+
+#buttonContainer {
+  display: flex;
+  column-gap: 30px;
+}
+
+.actionButton {
+  font-size: large;
+  width: 400px;
+  height: 100px;
+}
+
+.btn-success {
+  background-color: #4681f4;
+}
+
+#employeeViewContainer {
+  margin-top: 50px;
+}
+
+#remarksTextView:active {
+  background-color: yellow;
 }

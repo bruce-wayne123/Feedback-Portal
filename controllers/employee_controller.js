@@ -1,5 +1,4 @@
 const Employee = require("../models/employee");
-const fs = require('fs');
 module.exports.getEmployees = async function name(req, resp) {
     try {
         let employeesList = await Employee.find({});
@@ -15,20 +14,22 @@ module.exports.getEmployees = async function name(req, resp) {
 module.exports.create = async function (req, resp) {
     let requestBody = req.body;
     try {
-        let student = await Employee.find({ email: requestBody.email });
+        let employee = await Employee.find({ email: requestBody.email });
         let randomEmployeeId = Math.floor(Math.random() * 90000) + 10000;
-        if (student) {
+        if (employee) {
             await Employee.create({
                 employeeId: randomEmployeeId,
                 name: req.body.name,
                 email: req.body.email,
                 department: req.body.department,
-                location: req.body.location
+                location: req.body.location,
+                password: 123
             });
         }
         else {
             console.log("Employee already exists - Unable to create");
         }
+
         return resp.render('dashboard', { title: "Dashboard" });
     } catch (error) {
         console.log(error);

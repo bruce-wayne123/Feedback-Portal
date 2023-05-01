@@ -12,15 +12,27 @@ module.exports.signup = function (req, resp) {
 
 module.exports.create = async function (req, resp) {
     let requestBody = req.body;
+    console.log(requestBody);
     try {
         if (requestBody.password != requestBody.confirmpassword) {
             console.log("Password dont match");
             return resp.redirect("/");
         }
-
         let employee = await Employee.find({ email: requestBody.email });
         if (employee) {
-            await Employee.create({ name: requestBody.name, email: requestBody.email, password: requestBody.password });
+            let employee = await Employee.find({ email: requestBody.email });
+            let randomEmployeeId = Math.floor(Math.random() * 90000) + 10000;
+            if (employee) {
+                await Employee.create({
+                    employeeId: randomEmployeeId,
+                    name: requestBody.name,
+                    email: requestBody.email,
+                    department: requestBody.department,
+                    location: requestBody.location,
+                    isAdmin: false,
+                    password: requestBody.password
+                });
+            }
         }
         else {
             console.log("Employee already exists - Unable to create");
