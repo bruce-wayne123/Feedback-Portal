@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
-#dropdownContainer {
+.dropdownContainer {
   display: flex;
   flex-direction: row;
   column-gap: 25px;

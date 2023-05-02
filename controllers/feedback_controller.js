@@ -1,36 +1,43 @@
 const FeedBack = require("../models/feedback");
 const Employee = require("../models/employee");
-module.exports.getFeedbacks = async function name(req, resp) {
-    // try {
-    //     let employeesList = await Employee.find({});
-    //     return resp.json(200, {
-    //         message: "List of employees",
-    //         employees: employeesList
-    //     })
-    // } catch (error) {
-    //     console.log(error);
-    // }
+module.exports.getFeedback = async function name(req, resp) {
+    try {
+        let message;
+        let feedback = await FeedBack.find({ employeeId: req.params.id });
+       
+            
+        if (feedback.length <= 0) {
+            message = "No feedback data found";
+        }
+        else {
+            message = "Feedback data";
+        }
+        console.log("Feedback API response", feedback);
+        return resp.json(200, {
+            message: message,
+            feedback: feedback,
+        })
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 module.exports.create = async function (req, resp) {
     let requestBody = req.body;
+    console.log(requestBody);
+
     try {
-        let employee = await Employee.find({ email: requestBody.email });
-        let randomEmployeeId = Math.floor(Math.random() * 90000) + 10000;
+        let employee = await Employee.findById(requestBody.employee);
         if (employee) {
-            await Employee.create({
-                employeeId: randomEmployeeId,
-                name: req.body.name,
-                email: req.body.email,
-                department: req.body.department,
-                location: req.body.location,
-                password: 123
+            await FeedBack.create({
+                employeeId: employee._id,
+                teamwork: requestBody.teamwork,
+                communication: requestBody.communication,
+                accuracyOfWork: requestBody.accuracyOfWork,
+                attendance: requestBody.attendance,
+                remarks: requestBody.remarks
             });
         }
-        else {
-            console.log("Employee already exists - Unable to create");
-        }
-
         return resp.render('dashboard', { title: "Dashboard" });
     } catch (error) {
         console.log(error);
@@ -38,7 +45,8 @@ module.exports.create = async function (req, resp) {
 };
 
 module.exports.myFeedBack = async function (req, resp) {
-    return resp.render("myFeedBack", { title: "My FeedBack" });
+
+    return resp.render("myFeedBack", { title: "My FeedBack", empId: req.params.id });
 }
 
 module.exports.giveFeedBack = async function (req, resp) {

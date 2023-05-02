@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/myFeedBack.css">
+<div id="container">
+    <input id="empIdLabel" type="text" value="<%=empId%>" hidden />
+
+    <div id="remarksContainer">
+        Remarks : <label id="remarksLabel" type="text"></label>
+    </div>
+
+    <canvas id="chartId" aria-label="chart" height="350" width="580"></canvas>
+    <h2 id="noDataLabel" hidden>No feedback data found..</h2>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/assets/js/myFeedBack.js" type='text/javascript'></script>

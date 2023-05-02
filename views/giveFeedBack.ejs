@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/addEmployee.css">
-<form id="createEmployeeForm" action="/employee/create" method="post">
+<form id="createEmployeeForm" action="/feedback/create" method="post">
     <div id="interviewDetailsContainer2">
         <label for="employeeListView">Select Employee for feedback : </label>
         <select name="employee" id="employeeListView" required>
@@ -10,17 +10,17 @@
             <% } %>
         </select>
     </div>
-    <div id="dropdownContainer">
-        <label for="positionList" required>Team Work : </label>
-        <select name="department" id="deptList" required>
+    <div class="dropdownContainer">
+        <label>Team Work : </label>
+        <select name="teamwork" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <label for="positionList" required>Communication : </label>
-        <select name="location" id="officeList" required>
+        <label required>Communication : </label>
+        <select name="communication" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -28,17 +28,17 @@
             <option value="5">5</option>
         </select>
     </div>
-    <div id="dropdownContainer">
-        <label for="positionList" required>Accuracy Of Work : </label>
-        <select name="department" id="deptList" required>
+    <div class="dropdownContainer">
+        <label >Accuracy Of Work : </label>
+        <select name="accuracyOfWork" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <label for="positionList" required>Attendance : </label>
-        <select name="location" id="officeList" required>
+        <label>Attendance : </label>
+        <select name="attendance" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -48,7 +48,7 @@
     </div>
     <div id="remarksContainer">
         <label for="remarksTextView">Remarks : </label>
-        <textarea id="remarksTextView" placeholder="Enter remarks" required></textarea>
+        <textarea id="remarksTextView" name="remarks" placeholder="Enter remarks" required></textarea>
     </div>
     <input id="addStudentButton" class="btn btn-primary" type="submit" value="Submit" />
 </form>
