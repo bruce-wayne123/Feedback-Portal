@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/allfeedback.css">
+
+<div id="container">
+    <div style="display:flex;justify-content: center;padding: 10px;width: 800px; font-weight: bold;">
+        <label style="font-size: 14px;width: 18%">Emp Name</label>
+        <label style="font-size: 14px;width: 18%">Teamwork</label>
+        <label style="font-size: 14px;width: 18%">Communication</label>
+        <label style="font-size: 14px;width: 18%">Accuracy Of Work</label>
+        <label style="font-size: 14px;width: 18%">Attendance</label>
+    </div>
+    <div style="display:flex;justify-content: center;padding: 10px;width: 800px;">
+        <label style="width: 18%">
+            <%=feedback.employeeName%>
+        </label>
+        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.teamwork%>"></input>
+        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.communication%>"></input>
+        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.accuracyOfWork%>"></input>
+        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.attendance%>"></input>
+    </div>
+
+    <input id="updateDetailsButton" class="btn btn-primary" type="submit" value="Update" />
+</div>

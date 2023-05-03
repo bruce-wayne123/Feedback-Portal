@@ -1,0 +1,28 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#addStudent {
+  margin-top: 30px;
+  margin-left: 200px;
+}
+
+#buttonContainer {
+  display: flex;
+  column-gap: 30px;
+}
+
+.actionButton {
+  font-size: large;
+  width: 400px;
+  height: 100px;
+}
+
+.btn-success {
+  background-color: #4681f4;
+}

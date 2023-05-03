@@ -5,6 +5,9 @@ const feedbackSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        employeeName: {
+            type: String,
+        },
         teamwork: {
             type: String,
             required: true,
