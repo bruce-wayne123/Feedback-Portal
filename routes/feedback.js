@@ -9,4 +9,5 @@ router.get('/allFeedbacks', feedbackController.allFeedBack);
 router.get('/getAllFeedBacks', feedbackController.getAllFeedBacks);
 router.get("/deleteFeedBack/:id", feedbackController.deleteFeedback);
 router.get('/feedbackDetails/:id', feedbackController.updateFeedback);
+router.post('/updateFeedBack', feedbackController.update);
 module.exports = router;

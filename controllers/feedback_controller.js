@@ -43,6 +43,26 @@ module.exports.create = async function (req, resp) {
     }
 };
 
+module.exports.update = async function (req, resp) {
+    let requestBody = req.body;
+    try {
+        let feedback = await FeedBack.findById(requestBody.feedbackId);
+        if (feedback) {
+            feedback.teamwork = requestBody.teamwork;
+            feedback.communication = requestBody.communication;
+            feedback.accuracyOfWork = requestBody.accuracyOfWork;
+            feedback.attendance = requestBody.attendance;
+            await feedback.save();
+        }
+        else {
+            console.log("No employee found");
+        }
+        return resp.redirect('back');
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 module.exports.myFeedBack = async function (req, resp) {
     return resp.render("myFeedBack", { title: "My FeedBack", empId: req.params.id });
 }

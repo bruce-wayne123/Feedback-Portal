@@ -12,11 +12,18 @@
         <label style="width: 18%">
             <%=feedback.employeeName%>
         </label>
-        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.teamwork%>"></input>
-        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.communication%>"></input>
-        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.accuracyOfWork%>"></input>
-        <input style="width: 18%; margin-left: 5px;margin-right: 5px;" value="<%=feedback.attendance%>"></input>
+        <form method="post" action="/feedback/updateFeedBack">
+            <input type="text" name="feedbackId" value="<%=feedback._id%>" hidden/>
+            <input style="width: 18%; margin-left: 5px;margin-right: 5px;" name="teamwork"
+                value="<%=feedback.teamwork%>"></input>
+            <input style="width: 18%; margin-left: 5px;margin-right: 5px;" name="communication"
+                value="<%=feedback.communication%>"></input>
+            <input style="width: 18%; margin-left: 5px;margin-right: 5px;" name="accuracyOfWork"
+                value="<%=feedback.accuracyOfWork%>"></input>
+            <input style="width: 18%; margin-left: 5px;margin-right: 5px;" name="attendance"
+                value="<%=feedback.attendance%>"></input>
+            <input id="updateDetailsButton" class="btn btn-primary" type="submit" value="Update" />
+        </form>
     </div>
 
-    <input id="updateDetailsButton" class="btn btn-primary" type="submit" value="Update" />
 </div>
