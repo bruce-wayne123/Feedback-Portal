@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/addEmployee.css">
 <form id="createEmployeeForm" method="post" action="/employee/update">
-    <input type="text" name="employeeId" class="form-control" value="<%=employee._id%>" hidden/>
+    <input type="text" name="employeeId" class="form-control" value="<%=employee._id%>" hidden />
     <input type="text" name="name" placeholder="Name" class="form-control" value="<%=employee.name%>" required />
     <input type="email" name="email" value="<%=employee.email%>" class="form-control" disabled />
     <div id="dropdownContainer">
@@ -21,6 +21,11 @@
             <option value="Kolkata">Kolkata</option>
             <option value="Ahemedabad">Ahemedabad</option>
             <option value="Kochi">Kochi</option>
+        </select>
+        <label> Is employee admin ? </label>
+        <select name="isAdmin" required>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
         </select>
     </div>
     <input id="addStudentButton" class="btn btn-primary" type="submit" value="Update" />

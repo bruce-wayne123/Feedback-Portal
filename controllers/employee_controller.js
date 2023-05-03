@@ -43,7 +43,8 @@ module.exports.update = async function (req, resp) {
         if (employee) {
             employee.name = req.body.name,
                 employee.department = req.body.department,
-                employee.location = req.body.location
+                employee.location = req.body.location,
+                employee.isAdmin=req.body.isAdmin
             await employee.save();
         }
         else {
